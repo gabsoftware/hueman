@@ -35,6 +35,7 @@ if ( ! function_exists( 'alx_load' ) ) {
 		load_template( get_template_directory() . '/functions/widgets/alx-tabs.php' );
 		load_template( get_template_directory() . '/functions/widgets/alx-video.php' );
 		load_template( get_template_directory() . '/functions/widgets/alx-posts.php' );
+		load_template( get_template_directory() . '/functions/widgets/alx-dualcol-posts.php' );
 
 		// Load custom shortcodes
 		load_template( get_template_directory() . '/functions/shortcodes.php' );
