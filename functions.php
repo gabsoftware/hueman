@@ -115,6 +115,7 @@ if ( ! function_exists( 'alx_sidebars' ) ) {
 		if ( ot_get_option('before-com-widget') == 'on' ) { register_sidebar(array( 'name' => 'Before Comments Widget'  ,'id' => 'before-com-widget', 'description' => "Widget placed before the comments section", 'before_widget' => '<div id="%1$s" class="widget %2$s">','after_widget' => '</div>','before_title' => '<h3>','after_title' => '</h3>')); }
 		if ( ot_get_option('before-content-widget') == 'on' ) { register_sidebar(array( 'name' => 'Before Content Widget','id' => 'before-content-widget', 'description' => "Widget placed before the content", 'before_widget' => '<div id="%1$s" class="widget %2$s">','after_widget' => '</div>','before_title' => '<h3>','after_title' => '</h3>')); }
 		if ( ot_get_option('after-content-widget' ) == 'on' ) { register_sidebar(array( 'name' => 'After Content Widget' ,'id' => 'after-content-widget' , 'description' => "Widget placed after the content" , 'before_widget' => '<div id="%1$s" class="widget %2$s">','after_widget' => '</div>','before_title' => '<h3>','after_title' => '</h3>')); }
+		if ( ot_get_option('after-article-widget' ) == 'on' ) { register_sidebar(array( 'name' => 'After Article Widget' ,'id' => 'after-article-widget' , 'description' => "Widget placed just after the content of an article", 'before_widget' => '<div id="%1$s" class="widget %2$s">','after_widget' => '</div>','before_title' => '<h3>','after_title' => '</h3>')); }
 	}
 
 }
