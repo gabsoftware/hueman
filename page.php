@@ -22,12 +22,14 @@
 
 				<div class="entry themeform">
 
+					<?php $hasbeenmodified = get_the_modified_date() != get_the_date() || get_the_modified_time() != get_the_time(); ?>
+
 					<div class="entry-content"><?php the_content(); ?></div>
 					<p class="post-byline"><?php _e('by','hueman'); ?>
 						<span class="vcard author">
 							<span class="fn"><a href="<?php get_the_author_link(); ?>" rel="author"><?php the_author() ?></a></span>
-						</span> &middot; Published <time class="published" datetime="<?php the_time('Y-m-d H:i:s'); ?>"><?php the_date('F j, Y'); ?></time>
-						<?php if( get_the_modified_date() != get_the_date() ) : ?> &middot; Last modified <time class="updated" datetime="<?php the_modified_time('Y-m-d H:i:s'); ?>"><?php the_modified_date('F j, Y'); ?></time><?php endif; ?>
+						</span> &middot; Published <time class="published<?php if( ! $hasbeenmodified ) : ?> updated<?php endif; ?>" datetime="<?php the_time('Y-m-d H:i:s'); ?>"><?php the_date('F j, Y'); ?></time>
+						<?php if( $hasbeenmodified ) : ?> &middot; Last modified <time class="updated" datetime="<?php the_modified_time('Y-m-d H:i:s'); ?>"><?php the_modified_date('F j, Y'); ?></time><?php endif; ?>
 					</p>
 
 					<div class="clear"></div>

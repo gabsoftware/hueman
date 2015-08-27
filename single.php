@@ -20,11 +20,13 @@
 
 					<h1 class="post-title entry-title"><?php the_title(); ?></h1>
 
+					<?php $hasbeenmodified = get_the_modified_date() != get_the_date() || get_the_modified_time() != get_the_time(); ?>
+
 					<p class="post-byline"><?php _e('by','hueman'); ?>
 						<span class="vcard author">
 							<span class="fn"><a href="<?php get_the_author_link(); ?>" rel="author"><?php the_author() ?></a></span>
-						</span> &middot; Published <time class="published" datetime="<?php the_time('Y-m-d H:i:s'); ?>"><?php the_time('F j, Y'); ?></time>
-						<?php if( get_the_modified_date() != get_the_date() || get_the_modified_time() != get_the_time() ) : ?> &middot; Updated <time class="updated" datetime="<?php the_modified_time('Y-m-d H:i:s'); ?>"><?php the_modified_time('F j, Y'); ?></time><?php endif; ?>
+						</span> &middot; Published <time class="published<?php if( ! $hasbeenmodified ) : ?> updated<?php endif; ?>" datetime="<?php the_time('Y-m-d H:i:s'); ?>"><?php the_time('F j, Y'); ?></time>
+						<?php if( $hasbeenmodified ) : ?> &middot; Updated <time class="updated" datetime="<?php the_modified_time('Y-m-d H:i:s'); ?>"><?php the_modified_time('F j, Y'); ?></time><?php endif; ?>
 					</p>
 
 					<?php if( get_post_format() ) { get_template_part('inc/post-formats'); } ?>
