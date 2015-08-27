@@ -313,6 +313,15 @@ function custom_theme_options() {
 			'type'		=> 'on-off',
 			'section'	=> 'blog'
 		),
+		// Blog: Single - After Article Widget
+		array(
+			'id'		=> 'after-article-widget',
+			'label'		=> 'After article widget',
+			'desc'		=> 'Widget shown just after article content',
+			'std'		=> 'off',
+			'type'		=> 'on-off',
+			'section'	=> 'blog'
+		),
 		// Blog: Single - Authorbox
 		array(
 			'id'		=> 'author-bio',

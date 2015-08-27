@@ -35,6 +35,12 @@
 					<div class="clear"></div>
 				</div><!--/.entry-->
 
+				<?php if ( ot_get_option('after-article-widget') == 'on' ): ?>
+				<div id="after-article-widget">
+					<?php dynamic_sidebar( 'after-article-widget' ); ?>
+				</div><!--/#after-article-widget-->
+				<?php endif; ?>
+
 			</article>
 
 			<?php if ( ot_get_option('before-com-widget') == 'on' ): ?>

@@ -47,7 +47,15 @@
 					<?php the_tags('<p class="post-tags"><span>'.__('Tags:','hueman').'</span> ','','</p>'); ?>
 
 				</div><!--/.post-inner-->
+
+				<?php if ( ot_get_option('after-article-widget') == 'on' ): ?>
+				<div id="after-article-widget">
+					<?php dynamic_sidebar( 'after-article-widget' ); ?>
+				</div><!--/#after-article-widget-->
+				<?php endif; ?>
+
 			</article><!--/.post-->
+
 		<?php endwhile; ?>
 
 		<div class="clear"></div>
